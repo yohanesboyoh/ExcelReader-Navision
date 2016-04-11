@@ -1,0 +1,10 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+
+#sesuai dengan environment kerjanya / path kerja dari server
+#RewriteBase http://localhost/PortableGit/program/ExcelReader-Navision/
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php/$1 [L]
+</IfModule>
