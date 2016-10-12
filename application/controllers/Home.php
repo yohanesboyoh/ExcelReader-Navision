@@ -45,9 +45,9 @@ class Home extends CI_Controller {
 
 		// GET DATABASE FROM EXCEL
         $Reader_database = PHPExcel_IOFactory::createReaderForFile('./database_excel/ListCarrefour.xls');
+		
         $Reader_database->setReadDataOnly(true);
 		$objDatabaseXLS = $Reader_database->load('./database_excel/ListCarrefour.xls');
-
 		// PROSES DATA
 		$informasi_db_excel = $this->getDBExcel($objDatabaseXLS);
 		$data['informasi_db_excel'] = $informasi_db_excel;
