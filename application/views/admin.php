@@ -41,7 +41,7 @@
 								//$row+=1;
 				    		?>
 							<tr id = "tr-id-<?echo $key_db_excel;?>">
-								<td><?php echo $key_db_excel+1;?></td>
+								<td class = "data_row"><?php echo $key_db_excel+1;?></td>
 								<td class = "data_barcode"><?php echo $value_db_excel['barcode'];?></td>
 								<td class = "data_namabarang"><?php echo $value_db_excel['namabarang'];?></td>
 								<td class = "data_kodebarang"><?php echo $value_db_excel['kodebarang'];?></td>
@@ -194,6 +194,7 @@
 	    $('.button_edit').click(function (e) {
 	        e.preventDefault();
     	    // GET DATA
+			var data_row = $(this).closest("tr").find(".data_row").text();
     	    var data_barcode = $(this).closest("tr").find(".data_barcode").text();
     	    var data_namabarang = $(this).closest("tr").find(".data_namabarang").text();
     	    var data_kodebarang = $(this).closest("tr").find(".data_kodebarang").text();
@@ -214,12 +215,14 @@
 	    $('.button_delete').click(function (e) {
 	        e.preventDefault();
 			// GET DATA    	    
+			var data_row=$(this).closest("tr").find(".data_row").text();
 			var data_barcode = $(this).closest("tr").find(".data_barcode").text();
     	    var data_namabarang = $(this).closest("tr").find(".data_namabarang").text();
     	    var data_kodebarang = $(this).closest("tr").find(".data_kodebarang").text();
     	    var data_namabarangdrp = $(this).closest("tr").find(".data_namabarangdrp").text();
     	    var data_newprice = $(this).closest("tr").find(".data_newprice").text();
 			//COMPARE DATA WITH TABLE
+			
 	    });
     
 
