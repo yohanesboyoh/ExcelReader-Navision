@@ -53,7 +53,7 @@
 									</button>
 								</td>
 								<td>
-									<button type="button" class="btn btn-primary btn-sm button_delete">
+									<button type="button" class="btn btn-primary btn-sm button_delete" data-toggle="modal" data-target="#delete-modal">
 										Delete
 									</button>
 								</td>
@@ -79,31 +79,36 @@
 
                             <div class="modal-body">
                             	<div class  = "container">
-	                            	<form id = "edit-form" class="form-horizontal" role="form" name = "edit-form" method="post" action="asjdash">
+	                            	<form id = "edit-form" class="form-horizontal" role="form" name = "edit-form" method="post" action="UpdateExcel">
+										<div class="form-group row">
+											<label class = "col-lg-3" for="email">Row</label>
+											<label class = "col-lg-1">:</label>
+											<input class = "col-lg-8" type="text" class="form-control" id="edit-row" name="edit-row">
+										</div>
 										<div class="form-group row">
 											<label class = "col-lg-3" for="email">Barcode</label>
 											<label class = "col-lg-1">:</label>
-											<input class = "col-lg-8" type="text" class="form-control" id="edit-barcode">
+											<input class = "col-lg-8" type="text" class="form-control" id="edit-barcode" name="edit-barcode">
 										</div>
 										<div class="form-group row">
 											<label class = "col-lg-3" for="email">Nama Barang</label>
 											<label class = "col-lg-1">:</label>
-											<input class = "col-lg-8" type="text" class="form-control" id="edit-namabarang">
+											<input class = "col-lg-8" type="text" class="form-control" id="edit-namabarang" name="edit-namabarang">
 										</div>
 										<div class="form-group row">
 											<label class = "col-lg-3" for="email">Kode Barang</label>
 											<label class = "col-lg-1">:</label>
-											<input class = "col-lg-8" type="text" class="form-control" id="edit-kodebarang">
+											<input class = "col-lg-8" type="text" class="form-control" id="edit-kodebarang" name="edit-kodebarang">
 										</div>
 										<div class="form-group row">
 											<label class = "col-lg-3" for="email">Nama Barang (DRP)</label>
 											<label class = "col-lg-1">:</label>
-											<input class = "col-lg-8" type="text" class="form-control" id="edit-namabarangdrp">
+											<input class = "col-lg-8" type="text" class="form-control" id="edit-namabarangdrp" name="edit-namabarangdrp">
 										</div>
 										<div class="form-group row">
 											<label class = "col-lg-3" for="email">New Price</label>
 											<label class = "col-lg-1">:</label>
-											<input class = "col-lg-8" type="number" class="form-control" id="edit-newprice">
+											<input class = "col-lg-8" type="number" class="form-control" id="edit-newprice" name="edit-newprice">
 										</div>
 										<div class="form-group row">
 											<div class = "col-lg-12">
@@ -132,7 +137,7 @@
 							
                             <div class="modal-body">
                             	<div class  = "container">
-	                            	<form id = "insert-form" class="form-horizontal" role="form" name = "insert-form" method="POST" action="ModifyExcel">
+	                            	<form id = "insert-form" class="form-horizontal" role="form" name = "insert-form" method="POST" action="InsertExcel">
 										<div class="form-group row">
 											<label class = "col-lg-3" for="email">Barcode</label>
 											<label class = "col-lg-1">:</label>
@@ -171,6 +176,66 @@
 					</div>
 				</div>
 			</section>
+			
+						<!-- DELETE MASTER BARANG -->
+			<section>
+                <!-- DELETE FORM -->
+                <div id="delete-modal" class="modal fade" tabindex="1" aria-labelledby="delete-modal" aria-hidden="true">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+								<h4 class="modal-title">Delete Master Form</h4>
+							</div>
+							
+                            <div class="modal-body">
+                            	<div class  = "container">
+	                            	<form id = "delete-form" class="form-horizontal" role="form" name = "delete-form" method="POST" action="DeleteExcel">
+										<div class="form-group row">
+											<label class = "col-lg-3" for="email">Row</label>
+											<label class = "col-lg-1">:</label>
+											<input class = "col-lg-8" type="text" class="form-control" id="delete-row" name="delete-row" readonly>
+										</div>
+										
+										<div class="form-group row">
+											<label class = "col-lg-3" for="email">Barcode</label>
+											<label class = "col-lg-1">:</label>
+											<input class = "col-lg-8" type="text" class="form-control" id="delete-barcode" name="delete-barcode" readonly>
+										</div>
+										<div class="form-group row">
+											<label class = "col-lg-3" for="email">Nama Barang</label>
+											<label class = "col-lg-1">:</label>
+											<input class = "col-lg-8" type="text" class="form-control" id="delete-namabarang" name="delete-namabarang" readonly>
+										</div>
+										<div class="form-group row">
+											<label class = "col-lg-3" for="email">Kode Barang</label>
+											<label class = "col-lg-1">:</label>
+											<input class = "col-lg-8" type="text" class="form-control" id="delete-kodebarang" name="delete-kodebarang" readonly>
+										</div>
+										<div class="form-group row">
+											<label class = "col-lg-3" for="email">Nama Barang (DRP)</label>
+											<label class = "col-lg-1">:</label>
+											<input class = "col-lg-8" type="text" class="form-control" id="delete-namabarangdrp" name="delete-namabarangdrp" readonly>
+										</div>
+										<div class="form-group row">
+											<label class = "col-lg-3" for="email">New Price</label>
+											<label class = "col-lg-1">:</label>
+											<input class = "col-lg-8" type="number" class="form-control" id="delete-newprice" name="delete-newprice" readonly>
+										</div>
+										<div class="form-group row">
+											<div class = "col-lg-12">
+												<input class = "btn btn-primary pull-right" type="submit" value="Submit">
+											</div>
+										</div>
+	                            	</form>
+	                            </div>
+                            </div>
+
+						</div>
+					</div>
+				</div>
+			</section>
+			
 		</main>
 	</div>
 	<footer class = "container">
@@ -179,16 +244,6 @@
 	<script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script>
-		$('.button_add').click(function (e){
-			e.preventDefault();
-			$('#add-modal #insert-barcode').val(data_barcode);
-			$('#add-modal #insert-namabarang').val(data_namabarang);
-			$('#add-modal #insert-kodebarang').val(data_kodebarang);
-			$('#add-modal #insert-namabarangdrp').val(data_namabarangdrp);
-			$('#add-modal #insert-newprice').val(data_newprice);				
-			})
-		});
-		
 		
 	    // BUTTON EDIT
 	    $('.button_edit').click(function (e) {
@@ -202,14 +257,13 @@
     	    var data_newprice = $(this).closest("tr").find(".data_newprice").text();
 	    	
 	    	// SET DATA TO EDIT MASTER FORM
+			$('#edit-modal #edit-row').val(data_row);
 	    	$('#edit-modal #edit-barcode').val(data_barcode);
 	    	$('#edit-modal #edit-namabarang').val(data_namabarang);
 	    	$('#edit-modal #edit-kodebarang').val(data_kodebarang);
 	    	$('#edit-modal #edit-namabarangdrp').val(data_namabarangdrp);
 	    	$('#edit-modal #edit-newprice').val(data_newprice);
 	    });
-
-
 
 	    // BUTTON DELETE
 	    $('.button_delete').click(function (e) {
@@ -221,11 +275,16 @@
     	    var data_kodebarang = $(this).closest("tr").find(".data_kodebarang").text();
     	    var data_namabarangdrp = $(this).closest("tr").find(".data_namabarangdrp").text();
     	    var data_newprice = $(this).closest("tr").find(".data_newprice").text();
-			//COMPARE DATA WITH TABLE
 			
+	    	// SET DATA TO DELETE MASTER FORM
+			$('#delete-modal #delete-row').val(data_row);
+	    	$('#delete-modal #delete-barcode').val(data_barcode);
+	    	$('#delete-modal #delete-namabarang').val(data_namabarang);
+	    	$('#delete-modal #delete-kodebarang').val(data_kodebarang);
+	    	$('#delete-modal #delete-namabarangdrp').val(data_namabarangdrp);
+	    	$('#delete-modal #delete-newprice').val(data_newprice);
 	    });
     
-
 
     </script>
 	
