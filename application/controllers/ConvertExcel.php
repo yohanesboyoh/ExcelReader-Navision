@@ -225,18 +225,5 @@ class ConvertExcel extends CI_Controller {
      	}
 	}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 ?>

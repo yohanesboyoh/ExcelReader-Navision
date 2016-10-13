@@ -63,6 +63,9 @@ $route['do-convert-excel'] = 'ConvertExcel/mainDoUpload';
 $route['convert-pdf'] = 'ConvertPdf';
 $route['do-convert-pdf'] = 'ConvertPdf/mainDoUpload';
 
+$route['InsertExcel'] = 'ModifyExcel/InsertExcel';
+$route['UpdateExcel'] = 'ModifyExcel/UpdateExcel';
+$route['DeleteExcel'] = 'ModifyExcel/DeleteExcel';
 
 //$route['do-convert-pdf'] = 'Upload/do_upload';
 
