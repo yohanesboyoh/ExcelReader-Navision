@@ -18,10 +18,9 @@
 			<!-- MAIN TABLE -->
 			<section>
 				<div class="table-responsive">
-									<button type="button" class="btn btn-primary btn-sm button_add" data-toggle="modal" data-target="#add-modal" >
+									<button type="button" class="btn btn-primary btn-sm button_add pull-right" data-toggle="modal" data-target="#add-modal" >
 										Insert
 									</button>
-								
 					<table class="table table-striped table-bordered">
 						<thead>
 							<tr>
@@ -36,9 +35,9 @@
 						</thead>
 				    	<tbody>
 				    		<?php 
-							//$row=0;
+							$row=0;
 				    		foreach($informasi_db_excel as $key_db_excel => $value_db_excel) {
-								//$row+=1;
+								$row+=1;
 				    		?>
 							<tr id = "tr-id-<?echo $key_db_excel;?>">
 								<td class = "data_row"><?php echo $key_db_excel+1;?></td>
@@ -65,6 +64,64 @@
 				  	</table>
 				</div>
 			</section>
+			
+			<!-- INSERT MASTER BARANG -->
+			<section>
+                <!-- ADD FORM -->
+                <div id="add-modal" class="modal fade" tabindex="1" aria-labelledby="add-modal" aria-hidden="true">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+								<h4 class="modal-title">Insert Master Form</h4>
+							</div>
+							
+                            <div class="modal-body">
+                            	<div class  = "container">
+	                            	<form id = "insert-form" class="form-horizontal" role="form" name = "insert-form" method="POST" action="InsertExcel">
+										<div class="form-group row">
+											<label class = "col-lg-3" for="email">Row</label>
+											<label class = "col-lg-1">:</label>
+											<input class = "col-lg-8" type="text" class="form-control" value="<?php echo $row+1?>" id="insert-row" name="insert-row"  readonly>
+										</div>
+										<div class="form-group row">
+											<label class = "col-lg-3" for="email">Barcode</label>
+											<label class = "col-lg-1">:</label>
+											<input class = "col-lg-8" type="text" class="form-control" id="insert-barcode" name="insert-barcode">
+										</div>
+										<div class="form-group row">
+											<label class = "col-lg-3" for="email">Nama Barang</label>
+											<label class = "col-lg-1">:</label>
+											<input class = "col-lg-8" type="text" class="form-control" id="insert-namabarang" name="insert-namabarang">
+										</div>
+										<div class="form-group row">
+											<label class = "col-lg-3" for="email">Kode Barang</label>
+											<label class = "col-lg-1">:</label>
+											<input class = "col-lg-8" type="text" class="form-control" id="insert-kodebarang" name="insert-kodebarang">
+										</div>
+										<div class="form-group row">
+											<label class = "col-lg-3" for="email">Nama Barang (DRP)</label>
+											<label class = "col-lg-1">:</label>
+											<input class = "col-lg-8" type="text" class="form-control" id="insert-namabarangdrp" name="insert-namabarangdrp">
+										</div>
+										<div class="form-group row">
+											<label class = "col-lg-3" for="email">New Price</label>
+											<label class = "col-lg-1">:</label>
+											<input class = "col-lg-8" type="number" class="form-control" id="insert-newprice" name="insert-newprice">
+										</div>
+										<div class="form-group row">
+											<div class = "col-lg-12">
+												<input class = "btn btn-primary pull-right" type="submit" value="Submit">
+											</div>
+										</div>
+	                            	</form>
+	                            </div>
+                            </div>
+
+						</div>
+					</div>
+				</div>
+			</section>
 
 			<!-- EDIT MASTER BARANG -->
 			<section>
@@ -83,7 +140,7 @@
 										<div class="form-group row">
 											<label class = "col-lg-3" for="email">Row</label>
 											<label class = "col-lg-1">:</label>
-											<input class = "col-lg-8" type="text" class="form-control" id="edit-row" name="edit-row">
+											<input class = "col-lg-8" type="text" class="form-control" id="edit-row" name="edit-row" readonly>
 										</div>
 										<div class="form-group row">
 											<label class = "col-lg-3" for="email">Barcode</label>
@@ -122,59 +179,6 @@
 					</div>
 				</div>
 
-			</section>
-
-			<!-- INSERT MASTER BARANG -->
-			<section>
-                <!-- ADD FORM -->
-                <div id="add-modal" class="modal fade" tabindex="1" aria-labelledby="add-modal" aria-hidden="true">
-					<div class="modal-dialog modal-lg">
-						<div class="modal-content">
-							<div class="modal-header">
-								<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-								<h4 class="modal-title">Insert Master Form</h4>
-							</div>
-							
-                            <div class="modal-body">
-                            	<div class  = "container">
-	                            	<form id = "insert-form" class="form-horizontal" role="form" name = "insert-form" method="POST" action="InsertExcel">
-										<div class="form-group row">
-											<label class = "col-lg-3" for="email">Barcode</label>
-											<label class = "col-lg-1">:</label>
-											<input class = "col-lg-8" type="text" class="form-control" id="insert-barcode" name="insert-barcode">
-										</div>
-										<div class="form-group row">
-											<label class = "col-lg-3" for="email">Nama Barang</label>
-											<label class = "col-lg-1">:</label>
-											<input class = "col-lg-8" type="text" class="form-control" id="insert-namabarang" name="insert-namabarang">
-										</div>
-										<div class="form-group row">
-											<label class = "col-lg-3" for="email">Kode Barang</label>
-											<label class = "col-lg-1">:</label>
-											<input class = "col-lg-8" type="text" class="form-control" id="insert-kodebarang" name="insert-kodebarang">
-										</div>
-										<div class="form-group row">
-											<label class = "col-lg-3" for="email">Nama Barang (DRP)</label>
-											<label class = "col-lg-1">:</label>
-											<input class = "col-lg-8" type="text" class="form-control" id="insert-namabarangdrp" name="insert-namabarangdrp">
-										</div>
-										<div class="form-group row">
-											<label class = "col-lg-3" for="email">New Price</label>
-											<label class = "col-lg-1">:</label>
-											<input class = "col-lg-8" type="number" class="form-control" id="insert-newprice" name="insert-newprice">
-										</div>
-										<div class="form-group row">
-											<div class = "col-lg-12">
-												<input class = "btn btn-primary pull-right" type="submit" value="Submit">
-											</div>
-										</div>
-	                            	</form>
-	                            </div>
-                            </div>
-
-						</div>
-					</div>
-				</div>
 			</section>
 			
 						<!-- DELETE MASTER BARANG -->
