@@ -106,7 +106,7 @@
 										<div class="form-group row">
 											<label class = "col-lg-3" for="email">New Price</label>
 											<label class = "col-lg-1">:</label>
-											<input class = "col-lg-8" required type="number" class="form-control" id="insert-newprice" name="insert-newprice">
+											<input class = "col-lg-8" required type="text" class="form-control" id="insert-newprice" name="insert-newprice">
 										</div>
 										<div class="form-group row">
 											<div class = "col-lg-12">
@@ -164,7 +164,7 @@
 										<div class="form-group row">
 											<label class = "col-lg-3" for="email">New Price</label>
 											<label class = "col-lg-1">:</label>
-											<input class = "col-lg-8" required type="number" class="form-control" id="edit-newprice" name="edit-newprice">
+											<input class = "col-lg-8" required type="text" class="form-control" id="edit-newprice" name="edit-newprice">
 										</div>
 										<div class="form-group row">
 											<div class = "col-lg-12">
@@ -246,6 +246,7 @@
 	</footer>
 	<script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+	<script src="js/autoNumeric-min.js"></script>
     <script>
 		
 	    // BUTTON EDIT
@@ -258,7 +259,10 @@
     	    var data_kodebarang = $(this).closest("tr").find(".data_kodebarang").text();
     	    var data_namabarangdrp = $(this).closest("tr").find(".data_namabarangdrp").text();
     	    var data_newprice = $(this).closest("tr").find(".data_newprice").text();
-			data_newprice = data_newprice.replace(/(\d+).(?=\d{3}(\D|$))/g, "$1");
+			
+			//remove separator
+			//data_newprice = data_newprice.replace(/(\d+).(?=\d{3}(\D|$))/g, "$1");
+			
 	    	
 	    	// SET DATA TO EDIT MASTER FORM
 			$('#edit-modal #edit-row').val(data_row);
@@ -279,7 +283,9 @@
     	    var data_kodebarang = $(this).closest("tr").find(".data_kodebarang").text();
     	    var data_namabarangdrp = $(this).closest("tr").find(".data_namabarangdrp").text();
     	    var data_newprice = $(this).closest("tr").find(".data_newprice").text();
-			data_newprice = data_newprice.replace(/(\d+).(?=\d{3}(\D|$))/g, "$1");
+			//remove separator
+			//data_newprice = data_newprice.replace(/(\d+).(?=\d{3}(\D|$))/g, "$1");
+			
 	    	// SET DATA TO DELETE MASTER FORM
 			$('#delete-modal #delete-row').val(data_row);
 	    	$('#delete-modal #delete-barcode').val(data_barcode);
@@ -288,9 +294,71 @@
 	    	$('#delete-modal #delete-namabarangdrp').val(data_namabarangdrp);
 	    	$('#delete-modal #delete-newprice').val(data_newprice);
 	    });
-    
-    </script>
+			
+	
+	// CHECK INSERT NEW PRICE
+	$(document).ready(function() {
+		// INISIALISASI autoNumeric
+		$("#insert-newprice").autoNumeric('init',{
+        aSep: '.',
+        aDec: ',',
+		aSign: '',
+		mDec: '0'
+		});
+		$("#insert-newprice").keydown(function (e) {
+			// Allow: backspace, delete, tab, escape, enter and .
+			if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+				 // Allow: Ctrl+A
+				(e.keyCode == 65 && e.ctrlKey === true) ||
+				 // Allow: Ctrl+C
+				(e.keyCode == 67 && e.ctrlKey === true) ||
+				 // Allow: Ctrl+X
+				(e.keyCode == 88 && e.ctrlKey === true) ||
+				 // Allow: home, end, left, right
+				(e.keyCode >= 35 && e.keyCode <= 39)) {
+					 // let it happen, don't do anything
+				return;
+			}
+        // Ensure that it is a number and stop the keypress
+			if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+				e.preventDefault();
+			}
+		});
+    });
+
 
 	
+// CHECK UPDATE NEW PRICE
+		$(document).ready(function() {
+			// INISIALISASI autoNumeric
+			$("#edit-newprice").autoNumeric('init',{
+        aSep: '.',
+        aDec: ',',
+		aSign: '',
+		mDec: '0'
+		});
+			
+    $("#edit-newprice").keydown(function (e) {
+        // Allow: backspace, delete, tab, escape, enter and .
+        if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+             // Allow: Ctrl+A
+            (e.keyCode == 65 && e.ctrlKey === true) ||
+             // Allow: Ctrl+C
+            (e.keyCode == 67 && e.ctrlKey === true) ||
+             // Allow: Ctrl+X
+            (e.keyCode == 88 && e.ctrlKey === true) ||
+             // Allow: home, end, left, right
+            (e.keyCode >= 35 && e.keyCode <= 39)) {
+                 // let it happen, don't do anything
+                 return;
+        }
+        // Ensure that it is a number and stop the keypress
+        if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+            e.preventDefault();
+        }
+    });
+});
+
+    </script>	
 </body>
 </hmtl>

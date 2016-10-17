@@ -21,15 +21,19 @@ class ModifyExcel extends CI_Controller {
 		$highestrow=$_POST['insert-row'];
 		
 		$row=$highestrow+1;
+		// REMOVE separator FROM POST
+		$newprice=$_POST['insert-newprice'];	
+		$newprice = (int)str_replace('.','',$newprice);
 		
-		
+
 
 		// ISI ROW
 		$sheet->SetCellValue('B'.$row, $_POST['insert-barcode']);
 		$sheet->SetCellValue('D'.$row, $_POST['insert-kodebarang']);
 		$sheet->SetCellValue('C'.$row, $_POST['insert-namabarang']);
 		$sheet->SetCellValue('E'.$row, $_POST['insert-namabarangdrp']);
-		$sheet->SetCellValue('F'.$row, $_POST['insert-newprice']);
+		$sheet->SetCellValue('F'.$row, $newprice);
+		//$sheet->SetCellValue('F'.$row, $_POST['insert-newprice']);
 		$objWriter = new PHPExcel_Writer_Excel5($objPHPExcel);
 		$objWriter->save('./database_excel/ListCarrefour.xls');    
 		
@@ -51,12 +55,19 @@ class ModifyExcel extends CI_Controller {
 		$row=$selected_row+1;
 		// INSERT NEW ROW
 		$sheet->insertNewRowBefore($row+1, 1);
+		
+		// REMOVE separator FROM POST
+		$newprice=$_POST['edit-newprice'];
+		$newprice = str_replace('.','',$newprice);
+
 		// ISI ROW
 		$sheet->SetCellValue('B'.$row, $_POST['edit-barcode']);
 		$sheet->SetCellValue('C'.$row, $_POST['edit-namabarang']);
 		$sheet->SetCellValue('D'.$row, $_POST['edit-kodebarang']);
 		$sheet->SetCellValue('E'.$row, $_POST['edit-namabarangdrp']);
-		$sheet->SetCellValue('F'.$row, $_POST['edit-newprice']);
+		$sheet->SetCellValue('F'.$row, $newprice);
+		//$sheet->SetCellValue('F'.$row, $_POST['edit-newprice']);
+
 		// DELETE OLD ROW
 		$sheet->removeRow($row+1);
 		$objWriter = new PHPExcel_Writer_Excel5($objPHPExcel);
