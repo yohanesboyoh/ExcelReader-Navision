@@ -87,27 +87,27 @@
 										<div class="form-group row">
 											<label class = "col-lg-3" for="email">Barcode</label>
 											<label class = "col-lg-1">:</label>
-											<input class = "col-lg-8" type="text" class="form-control" id="insert-barcode" name="insert-barcode">
+											<input class = "col-lg-8" required type="text" class="form-control" id="insert-barcode" name="insert-barcode" >
 										</div>
 										<div class="form-group row">
 											<label class = "col-lg-3" for="email">Nama Barang</label>
 											<label class = "col-lg-1">:</label>
-											<input class = "col-lg-8" type="text" class="form-control" id="insert-namabarang" name="insert-namabarang">
+											<input class = "col-lg-8" required type="text" class="form-control" id="insert-namabarang" name="insert-namabarang">
 										</div>
 										<div class="form-group row">
 											<label class = "col-lg-3" for="email">Kode Barang</label>
 											<label class = "col-lg-1">:</label>
-											<input class = "col-lg-8" type="text" class="form-control" id="insert-kodebarang" name="insert-kodebarang">
+											<input class = "col-lg-8" required type="text" class="form-control" id="insert-kodebarang" name="insert-kodebarang">
 										</div>
 										<div class="form-group row">
 											<label class = "col-lg-3" for="email">Nama Barang (DRP)</label>
 											<label class = "col-lg-1">:</label>
-											<input class = "col-lg-8" type="text" class="form-control" id="insert-namabarangdrp" name="insert-namabarangdrp">
+											<input class = "col-lg-8" required type="text" class="form-control" id="insert-namabarangdrp" name="insert-namabarangdrp">
 										</div>
 										<div class="form-group row">
 											<label class = "col-lg-3" for="email">New Price</label>
 											<label class = "col-lg-1">:</label>
-											<input class = "col-lg-8" type="number" class="form-control" id="insert-newprice" name="insert-newprice">
+											<input class = "col-lg-8" required type="number" lang="sg" class="form-control" id="insert-newprice" name="insert-newprice">
 										</div>
 										<div class="form-group row">
 											<div class = "col-lg-12">
@@ -140,32 +140,32 @@
 										<div class="form-group row">
 											<label class = "col-lg-3" for="email">Row</label>
 											<label class = "col-lg-1">:</label>
-											<input class = "col-lg-8" type="text" class="form-control" id="edit-row" name="edit-row" readonly>
+											<input class = "col-lg-8" required type="text" class="form-control" id="edit-row" name="edit-row" readonly>
 										</div>
 										<div class="form-group row">
 											<label class = "col-lg-3" for="email">Barcode</label>
 											<label class = "col-lg-1">:</label>
-											<input class = "col-lg-8" type="text" class="form-control" id="edit-barcode" name="edit-barcode">
+											<input class = "col-lg-8" required type="text" class="form-control" id="edit-barcode" name="edit-barcode">
 										</div>
 										<div class="form-group row">
 											<label class = "col-lg-3" for="email">Nama Barang</label>
 											<label class = "col-lg-1">:</label>
-											<input class = "col-lg-8" type="text" class="form-control" id="edit-namabarang" name="edit-namabarang">
+											<input class = "col-lg-8" required type="text" class="form-control" id="edit-namabarang" name="edit-namabarang">
 										</div>
 										<div class="form-group row">
 											<label class = "col-lg-3" for="email">Kode Barang</label>
 											<label class = "col-lg-1">:</label>
-											<input class = "col-lg-8" type="text" class="form-control" id="edit-kodebarang" name="edit-kodebarang">
+											<input class = "col-lg-8" required type="text" class="form-control" id="edit-kodebarang" name="edit-kodebarang">
 										</div>
 										<div class="form-group row">
 											<label class = "col-lg-3" for="email">Nama Barang (DRP)</label>
 											<label class = "col-lg-1">:</label>
-											<input class = "col-lg-8" type="text" class="form-control" id="edit-namabarangdrp" name="edit-namabarangdrp">
+											<input class = "col-lg-8" required type="text" class="form-control" id="edit-namabarangdrp" name="edit-namabarangdrp">
 										</div>
 										<div class="form-group row">
 											<label class = "col-lg-3" for="email">New Price</label>
 											<label class = "col-lg-1">:</label>
-											<input class = "col-lg-8" type="number" class="form-control" id="edit-newprice" name="edit-newprice">
+											<input class = "col-lg-8" required type="number" class="form-control" id="edit-newprice" name="edit-newprice">
 										</div>
 										<div class="form-group row">
 											<div class = "col-lg-12">
@@ -289,8 +289,8 @@
 	    	$('#delete-modal #delete-newprice').val(data_newprice);
 	    });
     
-
     </script>
+
 	
 </body>
 </hmtl>
