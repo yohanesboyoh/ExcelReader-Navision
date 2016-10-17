@@ -18,9 +18,6 @@
 			<!-- MAIN TABLE -->
 			<section>
 				<div class="table-responsive">
-									<button type="button" class="btn btn-primary btn-sm button_add pull-right" data-toggle="modal" data-target="#add-modal" >
-										Insert
-									</button>
 					<table class="table table-striped table-bordered">
 						<thead>
 							<tr>
@@ -30,7 +27,9 @@
 								<th class = "text-center" style = "vertical-align : middle">Kode Barang</th>
 								<th class = "text-center" style = "vertical-align : middle">Nama Barang (DRP)</th>
 								<th class = "text-center" style = "vertical-align : middle">New Price</th>
-								<th class = "text-center" style = "vertical-align : middle" colspan = "2">Action</th>
+								<th class = "text-center" style = "vertical-align : middle" colspan = "2">Action<br><button type="button" class="btn btn-primary btn-sm button_add" data-toggle="modal" data-target="#add-modal">
+										Insert
+									</button></th>
 							</tr>
 						</thead>
 				    	<tbody>
@@ -45,7 +44,7 @@
 								<td class = "data_namabarang"><?php echo $value_db_excel['namabarang'];?></td>
 								<td class = "data_kodebarang"><?php echo $value_db_excel['kodebarang'];?></td>
 								<td class = "data_namabarangdrp"><?php echo $value_db_excel['namabarangdrp'];?></td>
-								<td class = "data_newprice"><?php echo $value_db_excel['newprice'];?></td>
+								<td class = "data_newprice"><?php echo number_format($value_db_excel['newprice'],0,',','.');?></td>
 								<td>
 									<button type="button" class="btn btn-primary btn-sm button_edit" data-toggle="modal" data-target="#edit-modal">
 										Update
@@ -107,7 +106,7 @@
 										<div class="form-group row">
 											<label class = "col-lg-3" for="email">New Price</label>
 											<label class = "col-lg-1">:</label>
-											<input class = "col-lg-8" required type="number" lang="sg" class="form-control" id="insert-newprice" name="insert-newprice">
+											<input class = "col-lg-8" required type="number" class="form-control" id="insert-newprice" name="insert-newprice">
 										</div>
 										<div class="form-group row">
 											<div class = "col-lg-12">
@@ -259,6 +258,7 @@
     	    var data_kodebarang = $(this).closest("tr").find(".data_kodebarang").text();
     	    var data_namabarangdrp = $(this).closest("tr").find(".data_namabarangdrp").text();
     	    var data_newprice = $(this).closest("tr").find(".data_newprice").text();
+			data_newprice = data_newprice.replace(/(\d+).(?=\d{3}(\D|$))/g, "$1");
 	    	
 	    	// SET DATA TO EDIT MASTER FORM
 			$('#edit-modal #edit-row').val(data_row);
@@ -279,7 +279,7 @@
     	    var data_kodebarang = $(this).closest("tr").find(".data_kodebarang").text();
     	    var data_namabarangdrp = $(this).closest("tr").find(".data_namabarangdrp").text();
     	    var data_newprice = $(this).closest("tr").find(".data_newprice").text();
-			
+			data_newprice = data_newprice.replace(/(\d+).(?=\d{3}(\D|$))/g, "$1");
 	    	// SET DATA TO DELETE MASTER FORM
 			$('#delete-modal #delete-row').val(data_row);
 	    	$('#delete-modal #delete-barcode').val(data_barcode);
