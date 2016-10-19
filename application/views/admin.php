@@ -223,7 +223,7 @@
 										<div class="form-group row">
 											<label class = "col-lg-3" for="email">New Price</label>
 											<label class = "col-lg-1">:</label>
-											<input class = "col-lg-8" type="number" class="form-control" id="delete-newprice" name="delete-newprice" readonly>
+											<input class = "col-lg-8" type="text" class="form-control" id="delete-newprice" name="delete-newprice" readonly>
 										</div>
 										<div class="form-group row">
 											<div class = "col-lg-12">
