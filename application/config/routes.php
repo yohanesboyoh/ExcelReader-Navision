@@ -60,6 +60,13 @@ $route['convert-excel'] = 'ConvertExcel';
 $route['do-convert-excel'] = 'ConvertExcel/mainDoUpload';
 
 
+$route['otomate-excel'] = 'OtomateExcel';
+$route['do-otomate-excel'] = 'OtomateExcel/addData';
+
+$route['do-delete-otomate-excel'] = 'OtomateExcel/deleteData';
+$route['do-download-otomate-excel'] = 'OtomateExcel/downloadData';
+
+
 $route['convert-pdf'] = 'ConvertPdf';
 $route['do-convert-pdf'] = 'ConvertPdf/mainDoUpload';
 
