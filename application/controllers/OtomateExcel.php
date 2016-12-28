@@ -34,109 +34,108 @@ class OtomateExcel extends CI_Controller {
 		$this->mSo = null;
 		$this->mSelisih = null;
 
-		$this->arrNameStore = array(	"CTRI16121612281989" => "011 - Cempaka Putih",
-										"CTRI16121612281126" => "012 - Duta Merlin",
-										"CTRI16121612283552" => "015 - MT. Haryono",
-										"CTRI16121612284319" => "016 - Megamall Pluit",
-										"CTRI16121612284936" => "018 - Cempaka Mas",
-										"CTRI16121612284665" => "019 - Lebak Bulus",
-										"CTRI16121612280943" => "020 - Puri Indah",
-										"CTRI16121612280305" => "021 - Ambassador",
-										"CTRI16121612282840" => "024 - Palembang Square",
-										"CTRI16121612282285" => "025 - Permata Hijau", // 10
+		$this->arrNameStore = array(	"011" => "011 - Cempaka Putih",
+										"012" => "012 - Duta Merlin",
+										"015" => "015 - MT. Haryono",
+										"016" => "016 - Megamall Pluit",
+										"018" => "018 - Cempaka Mas",
+										"019" => "019 - Lebak Bulus",
+										"020" => "020 - Puri Indah",
+										"021" => "021 - Ambassador",
+										"024" => "024 - Palembang Square",
+										"025" => "025 - Permata Hijau", // 10
 
-										"CTRI16121612282906" => "026 - Medan Fair",
-										"CTRI16121612282043" => "027 - Mangga Dua Square",
-										"CTRI16121612281283" => "028 - ITC BSD",
-										"CTRI16121612283570" => "029 - ITC DEPOK",
-										"CTRI16121612284186" => "030 - Panakukang Mas",
-										"CTRI16121612280899" => "031 - Taman Palem",
-										"CTRI16121612284758" => "033 - Plaza Ambarukmo",
-										"CTRI16121612284206" => "034 - Keppel Bubutan",
-										"CTRI16121612280572" => "035 - Sukajadi",
-										"CTRI16121612283196" => "036 - Tamini Square", // 20
+										"026" => "026 - Medan Fair",
+										"027" => "027 - Mangga Dua Square",
+										"028" => "028 - ITC BSD",
+										"029" => "029 - ITC DEPOK",
+										"030" => "030 - Panakukang Mas",
+										"031" => "031 - Taman Palem",
+										"033" => "033 - Plaza Ambarukmo",
+										"034" => "034 - Keppel Bubutan",
+										"035" => "035 - Sukajadi",
+										"036" => "036 - Tamini Square", // 20
 
-										"CTRI16121612282627" => "037 - ITC Surabaya",
-										"CTRI16121612283870" => "038 - Kramatjati Indah",
-										"CTRI16121612283443" => "039 - Blue Mall Bekasi",
-										"CTRI16121612282576" => "040 - Carrefour Cikarang",
-										"CTRI16121612284079" => "041 - Kelapa Gading",
-										"CTRI16121612280762" => "042 - Carrefour Denpasar",
-										"CTRI16121612282098" => "043 - Carrefour Semarang",
-										"CTRI16121612284754" => "044 - Kiara Condong",
-										"CTRI16121612280534" => "045 - Cibinong",
-										"CTRI16121612282439" => "046 - Carrefour Kalimas", // 30
+										"037" => "037 - ITC Surabaya",
+										"038" => "038 - Kramatjati Indah",
+										"039" => "039 - Blue Mall Bekasi",
+										"040" => "040 - Carrefour Cikarang",
+										"041" => "041 - Kelapa Gading",
+										"042" => "042 - Carrefour Denpasar",
+										"043" => "043 - Carrefour Semarang",
+										"044" => "044 - Kiara Condong",
+										"045" => "045 - Cibinong",
+										"046" => "046 - Carrefour Kalimas", // 30
 
-										"CTRI16121612282748" => "047 - Ciledug",
-										"CTRI16121612281074" => "051 - Carrefour Buaran",
-										"CTRI16121612281564" => "053 - Bekasi Square",
-										"CTRI16121612281740" => "054 - Carrefour Blok M",
-										"CTRI16121612280094" => "055 - Carrefour Madiun",
-										"CTRI16121612281371" => "056 - Carrefour Ciputat",
-										"CTRI16121612284615" => "057 - Carrefour CBD Pluit",
-										"CTRI16121612282916" => "058 - Carrefour Karawang",
-										"CTRI16121612283371" => "059 - Central Park",
-										"CTRI16121612286149" => "060 - Carrefour Serang", // 40
+										"047" => "047 - Ciledug",
+										"051" => "051 - Carrefour Buaran",
+										"053" => "053 - Bekasi Square",
+										"054" => "054 - Carrefour Blok M",
+										"055" => "055 - Carrefour Madiun",
+										"056" => "056 - Carrefour Ciputat",
+										"057" => "057 - Carrefour CBD Pluit",
+										"058" => "058 - Carrefour Karawang",
+										"059" => "059 - Central Park",
+										"060" => "060 - Carrefour Serang", // 40
 
-										"CTRI16121612282776" => "061 - Season City",
-										"CTRI16121612282726" => "062 - Medan Citra",
-										"CTRI16121612284921" => "063 - Carrefour Pekalongan",
-										"CTRI16121612283279" => "064 - Supermal Karawaci",
-										"CTRI16121612281985" => "065 - Carrefour Cipinang",
-										"CTRI16121612282556" => "066 - Cibinong City Mall",
-										"CTRI16121612283216" => "067 - Batam Muka Kuning",
-										"CTRI16121612283419" => "068 - Mojokerto",
-										"CTRI16121612285112" => "069 - Semarang Srondol",
-										"CTRI16121612280627" => "070 - Solo Paragon", // 50
+										"061" => "061 - Season City",
+										"062" => "062 - Medan Citra",
+										"063" => "063 - Carrefour Pekalongan",
+										"064" => "064 - Supermal Karawaci",
+										"065" => "065 - Carrefour Cipinang",
+										"066" => "066 - Cibinong City Mall",
+										"067" => "067 - Batam Muka Kuning",
+										"068" => "068 - Mojokerto",
+										"069" => "069 - Semarang Srondol",
+										"070" => "070 - Solo Paragon", // 50
 
-										"CTRI16121612280484" => "071 - Trans Studio MKS",
-										"CTRI16121612286202" => "072 - Kota Kasablanka",
-										"CTRI16121612286776" => "073 - OPI Mall Palembang",
-										"CTRI16121612283349" => "074 - Tangerang Center",
-										"CTRI16121612283918" => "075 - Tangerang City",
-										"CTRI16121612283506" => "076 - Pasuruan Land",
-										"CTRI16121612284565" => "077 - Magelang Armada",
-										"CTRI16121612285519" => "078 - Atrium Pondok Gede",
-										"CTRI16121612285642" => "080 - X-Mall Kalimalang",
-										"CTRI16121612285532" => "081 - GALARA MALL PALU", // 60
+										"071" => "071 - Trans Studio MKS",
+										"072" => "072 - Kota Kasablanka",
+										"073" => "073 - OPI Mall Palembang",
+										"074" => "074 - Tangerang Center",
+										"075" => "075 - Tangerang City",
+										"076" => "076 - Pasuruan Land",
+										"077" => "077 - Magelang Armada",
+										"078" => "078 - Atrium Pondok Gede",
+										"080" => "080 - X-Mall Kalimalang",
+										"081" => "081 - GALARA MALL PALU", // 60
 
-										"CTRI16121612286093" => "082 - CIMAHI",
-										"CTRI16121612286848" => "083 - Cipadung Bandung",
-										"CTRI16121612286413" => "084 - Kediri",
-										"CTRI16121612286076" => "086 - Grand Daya Makassar",
-										"CTRI16121612286146" => "087 - Cilandak",
-										"CTRI16121612285686" => "088 - Balikpapan Daun Village",
-										"CTRI16121612286826" => "090 - Living Plaza Cirebon",
-										"CTRI16121612286636" => "402 - Kebayoran",
-										"CTRI16121612286624" => "404 - Blimbing Malang",
-										"CTRI16121612286108" => "405 - Meruya", // 70
+										"082" => "082 - CIMAHI",
+										"083" => "083 - Cipadung Bandung",
+										"084" => "084 - Kediri",
+										"086" => "086 - Grand Daya Makassar",
+										"087" => "087 - Cilandak",
+										"088" => "088 - Balikpapan Daun Village",
+										"088" => "088 - Living Plaza Cirebon",
+										"402" => "402 - Kebayoran",
+										"404" => "404 - Blimbing Malang",
+										"405" => "405 - Meruya", // 70
 
-										"CTRI16121612286949" => "406 - Hayam Wuruk Jember",
-										"CTRI16121612286242" => "408 - Pengayoman Makassar",
-										"CTRI16121612285685" => "411 - Dukuh Kupang Sby",
-										"CTRI16121612285341" => "412 - Ahmad Yani Surabaya",
-										"CTRI16121612286270" => "416 - Sunter Jakarta",
-										"CTRI16121612286461" => "417 - Bintaro Jakarta",
-										"CTRI16121612286046" => "418 - Menteng Prada",
-										"CTRI16121612286498" => "419 - Baru Solo",
-										"CTRI16121612285752" => "420 - Pasar Minggu Jakarta",
-										"CTRI16121612286257" => "425 - Karebosi Makassar", // 80
+										"406" => "406 - Hayam Wuruk Jember",
+										"408" => "408 - Pengayoman Makassar",
+										"411" => "411 - Dukuh Kupang Sby",
+										"412" => "412 - Ahmad Yani Surabaya",
+										"416" => "416 - Sunter Jakarta",
+										"417" => "417 - Bintaro Jakarta",
+										"418" => "418 - Menteng Prada",
+										"419" => "419 - Baru Solo",
+										"420" => "420 - Pasar Minggu Jakarta",
+										"425" => "425 - Karebosi Makassar", // 80
 
-										"CTRI16121612285727" => "426 - Tamalanrea Makassar",
-										"CTRI16121612286066" => "427 - Pamulang",
-										"CTRI16121612286410" => "428 - Bekasi Harapan",
-										"CTRI16121612286939" => "435 - Link Karebosi MKS",
-										"CTRI16121612286444" => "438 - Pontianak Matahari",
-										"CTRI16121612286814" => "439 - Bali Singaraja",
-										"CTRI16121612282678" => "201 - Bekasi Juanda Groserindo",
-										"CTRI16121612286886" => "202 - Bonjol Denpasar Groserindo",
-										"CTRI16121612286385" => "701 - Mega Tendean Jakarta",
-										"CTRI16121612285711" => "703 - Lebak Bulus Express", // 90
+										"426" => "426 - Tamalanrea Makassar",
+										"427" => "427 - Pamulang",
+										"428" => "428 - Bekasi Harapan",
+										"435" => "435 - Link Karebosi MKS",
+										"438" => "438 - Pontianak Matahari",
+										"439" => "439 - Bali Singaraja",
+										"201" => "201 - Bekasi Juanda Groserindo",
+										"202" => "202 - Bonjol Denpasar Groserindo",
+										"701" => "701 - Mega Tendean Jakarta",
+										"703" => "703 - Lebak Bulus Express", // 90
 
-										"CTRI16121612285717" => "704 - Batam Muka Kuning Express",
-										"CTRI16121612285718" => "706 - Solo Paragon Express",
-										"CTRI16121612285714" => "707 - Season City Express", // 93
-										"CTRI16121612285714" => "707 - Season Ciasdasdty Express", // 93
+										"704" => "704 - Batam Muka Kuning Express",
+										"706" => "706 - Solo Paragon Express",
+										"707" => "707 - Season City Express", // 93
 									);
 
 	}
@@ -359,7 +358,16 @@ class OtomateExcel extends CI_Controller {
 		}
 
 		// selaraskan data cmd dengan new name store
-		$this->mNewNameStore = $this->getNewNameStore($this->mCDT[0]);
+		/*
+		$pembandingNameStore = substr($this->mNomorOder[0], 1, 3);
+		var_dump($pembandingNameStore);
+		$this->mNewNameStore = $this->getNewNameStore($pembandingNameStore);
+		*/
+		$this->mNewNameStore = $this->findValueInExcel($objUploadXLS, "Kode Penerima", 50, 'Z');
+		if($this->mNewNameStore == null) {
+			throw new Exception("Data Kode Penerima Tidak ada");
+		}
+
 
 		$this->mTaxTenPercent = $this->mPI[1] / 10;
 
@@ -465,7 +473,7 @@ class OtomateExcel extends CI_Controller {
 		$objSheet->getCell('J1')->setValue('Selisih');
 
 		$objSheet->getCell('A2')->setValue('1');
-		$objSheet->getCell('B2')->setValue($this->mNewNameStore);
+		$objSheet->getCell('B2')->setValue($this->mNewNameStore[0]);
 		$objSheet->getCell('C2')->setValue($this->mTanggalOrder[0]);
 		$objSheet->getCell('D2')->setValue($this->mNomorOder[0]);
 		$objSheet->getCell('E2')->setValue($this->mCDT[0]);
@@ -492,7 +500,7 @@ class OtomateExcel extends CI_Controller {
 		$lastRow++;
 
 		$objUploadXLS->setActiveSheetIndex(0)->setCellValue('A'.$lastRow, $lastRow-1);
-		$objUploadXLS->setActiveSheetIndex(0)->setCellValue('B'.$lastRow, $this->mNewNameStore);
+		$objUploadXLS->setActiveSheetIndex(0)->setCellValue('B'.$lastRow, $this->mNewNameStore[0]);
 		$objUploadXLS->setActiveSheetIndex(0)->setCellValue('C'.$lastRow, $this->mTanggalOrder[0]);
 		$objUploadXLS->setActiveSheetIndex(0)->setCellValue('D'.$lastRow, $this->mNomorOder[0]);
 		$objUploadXLS->setActiveSheetIndex(0)->setCellValue('E'.$lastRow, $this->mCDT[0]);
