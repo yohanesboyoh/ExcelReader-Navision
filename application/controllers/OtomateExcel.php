@@ -120,18 +120,22 @@ class OtomateExcel extends CI_Controller {
 
 		$objPHPExcel = $Reader->load($get_file_name_excel);
 
+		$lastRow = $objPHPExcel->setActiveSheetIndex(0)->getHighestRow();
+
 		$key_row = $this->findPivotString("500", "Z", $data_cdt, $objPHPExcel)['row'];
 
 		$objPHPExcel = PHPExcel_IOFactory::load($get_file_name_excel);
 		
 		$objPHPExcel->getActiveSheet()->removeRow($key_row);
 
+		if($lastRow != $key_row) {
+			$this->orderDataNo($objPHPExcel);
+		}
+
 		$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, "csv");
 
 		$objWriter->save($get_file_name_excel);
 
-		$this->orderDataNo($objPHPExcel);
-		
 		$objWriter->save($get_file_name_excel);
 
     	redirect(base_url().'otomate-excel');
