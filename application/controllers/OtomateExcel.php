@@ -130,6 +130,10 @@ class OtomateExcel extends CI_Controller {
 
 		$objWriter->save($get_file_name_excel);
 
+		$this->orderDataNo($objPHPExcel);
+		
+		$objWriter->save($get_file_name_excel);
+
     	redirect(base_url().'otomate-excel');
 
 	}
@@ -303,6 +307,26 @@ class OtomateExcel extends CI_Controller {
 		$objWriter->save($get_file_name_excel);
 
 	}
+
+
+
+
+	private function orderDataNo($objPHPExcel) {
+
+		$lastRow = $objPHPExcel->setActiveSheetIndex(0)->getHighestRow();
+
+		$realNo = 1;
+
+		for($row = 2; $row <= $lastRow; $row++) {
+			$cellValue = $objPHPExcel->getSheet(0)->getCell('A'.$row)->getValue();
+			if($cellValue != $realNo) {
+				$objPHPExcel->setActiveSheetIndex(0)->setCellValue('A'.$row, $realNo);
+			}
+			$realNo++;
+		}
+
+	}
+
 
 
 
