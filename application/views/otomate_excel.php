@@ -155,6 +155,7 @@
             input.name = "data";
             input.value = td_cdt;
             form.appendChild(input);
+            document.body.appendChild(form);
             form.submit();
         }
     });
